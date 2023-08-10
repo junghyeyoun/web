@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Javascript 연습</h2>
+<script type="text/javascript">
+<!-- 
+	 window.document.write("환영합니다");
+	 window.document.write("<br><b>환영</b><i>합니다</i>"); 
+-->		
+</script>
+<br>
+다시 html 문서
+<br>
+<script>
+	"use strict" // 엄격 모드. 모던한 모드. 디폴트는 느슨한 모드
+	window.document.write("이건 자바스크립트");
+	// a = 10;
+	// b = 20; // 비권장 
+	window.document.write("<br>a :", a); // 변수 선언하기 전에 찍어도 찍힘 undefined - hoisting 기능 자동 발생
+	var a = 10;
+	var b = 20;
+	window.document.write("<br>");
+	window.document.write(a+b);
+	
+	// window.document.write("<br>c :", c); // err
+	let c = 30; // 선언한 이후에만 변수 사용 가능 , 권장 // 변수 let으로 쓰는게 좋음. hoisiting 기능 x
+	let d = 40;
+	window.document.write("<br>");
+	window.document.write(c+d);
+	console.log(c+d); // 표준 출력장치로 출력. 브라우저 검사창에서 확인
+</script>
+</body>
+</html>

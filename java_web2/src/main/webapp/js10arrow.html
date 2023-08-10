@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	"use strict"; 
+document.write('<h2> 화살표 함수 정리 </h2>');
+
+let sum1 = function(a,b) {
+	return a+b;
+};
+document.write('<br>', sum1(1,2));
+
+// 화살표 함수
+let sum2 = (a,b) => a+b; // 다른언어에서는 람다와 비슷함
+document.write('<br>', sum2(1,2));
+
+let double1 = function(n) { return n*2 }
+document.write('<br>', `double1 : ${double1(3)}`);
+
+let double2 = n =>  n*2; // 매개변수가 한개인 경우 소괄호 생략가능
+document.write('<br>', `double2 : ${double2(3)}`);double1
+
+let sayHi = () => document.write('<br>안녕하세요'); // 매개변수가 없는 경우 소괄호 써야함
+sayHi();
+
+let sayHi2 = () => {document.write('<br>안녕하세요'); 
+					document.write('<br>안녕하세요2');// 수행할 문장 복수개면 {} 써야함, return을 써줘야함
+					return "잘가";
+					}
+let result = sayHi2();
+document.write('<br>',result);
+
+document.write('<br>');
+// let age = +prompt("나이 입력",20); // 20 문자열로 받는 거임 // +붙이면 형변환
+let age = 20;
+let welcome = (age+1 < 30)?() => document.write('<br>안녕') : () => document.write('<br>반가워')
+welcome();
+</script>
+<script>
+	document.write('<hr> 반복문 for에서 못다한 이야기 마저 할까요');
+	function func(...ar) {
+		document.write("<br>",ar.length);
+		document.write("<br>");
+		
+		for(let i =0; i<ar.length;i++){
+			document.write(ar[i]+" ");
+		}
+		
+		document.write("<br>");
+		for(let data of ar) {
+			document.write(data+" ");
+		}
+		document.write("<br>");
+		ar.forEach(function(obj){
+			document.write(obj + " ");
+		});
+		
+		document.write("<br>");
+		ar.forEach(obj => document.write(obj + " "));
+	}
+	func('국인','예진','준호','한잔');
+	
+	document.write("<hr>callback function : 나중에 수행할 것을 예약해 두는 함수");
+	console.log(1);
+	setTimeout(function(){ // 얘가 callback function
+		console.log(2);
+	},3000); // 일정 시간 후에 함수를 실행 (3초)
+	console.log(3);
+	
+	document.write("<br>");
+	function nice(su,f1,f2) {
+		if(su%2 === 0)
+			f1();
+		else
+			f2();
+	};
+	
+	nice(2,()=>console.log("짝수"), () =>console.log("홀수"));
+	
+	document.write("<br>");
+	function ask(question, yes, no) {
+		if(confirm(question))
+			yes();
+		else
+			no();
+	}
+	
+	function showok() {
+		alert("동의");
+	}
+	
+	function showcancel() {
+		alert("취소");
+	}
+	
+	ask("동의합니까?",showok,showcancel);
+	
+	// 재귀 함수 : 함수 자신을 호출 - 반복처리에 효과적
+	// 반복 처리 1 : for문
+	console.log(Math.pow(2,3));
+	function powFunc1(x,n) {
+		let result = 1;
+		// x를 n번 반복
+		for(let i=0;i<n; i++) {
+			result*=x;
+		}
+		return result;
+	}
+	console.log('powerFunc1 수행 후 : ',powFunc1(2,3));
+	
+	// 반복 처리 2 : 재귀적인 사고를 사용
+	 function powFunc2(x,n){
+		 if(n==1) {
+			 return x;
+		 }else {
+			 return x*powFunc2(x,n-1)
+		 }
+	 }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수 연습</title>
+<script> // 전역
+	let count = 0;
+	function aa() {
+		count += 1;
+		// return; // 함수의 무조건적인 탈출
+		document.write(count + "번 수행<br>");
+	}
+	
+	function bb() {
+		document.write('<br>bb함수 처리');
+		cc(5);
+		document.write('<br>', cc('kor')); // 문자열 나오면 문자열 더하기 
+		// result = cc(5);
+		// document.write('<br>',result); cc(5)와 같음
+		
+		document.write('<br>');
+		dd(5,10);
+		dd(5);
+		dd(); // 값 안주면 undefined
+		dd(5,10,15); // 마지막 하나 무시 // 자바는 argument의 개수, 타입 안맞으면 err
+	}
+	
+	function cc(arg) { // 매개변수가 있는 함수
+		let kk = arg + 10;
+		document.write("<br> kk : ",kk);
+		// return undefined; // 생략하면 함수의 반환값은 undefined (default값)
+		return kk;
+	}
+	
+	function dd(a,b) { // 지역변수
+		document.write('<br>',a,' ',b)
+	}
+</script>
+<script>
+	function f1() {
+		document.write('<br>밥은 먹었니?');
+	}
+	
+	function f2(func) { // 매개변수로 함수 전달받음
+		func(); // f1함수를 호출
+	}
+	
+	function f3(f) { 
+		//return f();
+		return f;  //반환값이 함수 객체
+	}
+	
+	function hi () { 
+		f2(f1); // f1함수의 객체 주소를 인수로 가짐  
+		
+	}
+	
+	let hello = function hi() { // 함수를 변수에 치환
+	    // f2(f1()); // f1함수의 실행결과를 인수로 가짐
+		f2(f1);  // f1 함수 객체 (주소)가 인수
+		document.write('<br>^^^;');
+		f3(f1);
+		re = f3(f1);
+		re();
+		
+		f3(f1)(); // f1함수 개체를 받은 후 실행
+	}
+	
+	
+</script> 
+
+<body>
+ 나만의 함수 작성 2라운드<br>
+ <script>
+	aa();
+	aa();
+	bb();
+	// 일급 함수 : 함수객체를 변수에 치환, 인수로 함수 가능, 매개변수로 함수 가능, 반환값으로 함수 가능
+	document.write('<br> -------------------------');
+	document.write('<br> hello의 정체는 ', hello);
+	hello();
+	world = hello;
+	world();
+	
+	(function kbs(){
+		document.write('<br>대한민국 대표방송')
+	})(); // 함수 정의하고 바로 호출
+	
+	
+</script>
+<hr>
+<script>
+	document.write('<br>js에서 함수 내의 변수 scope ------<br>');
+	let a1 = 10; // 전역변수
+	const b1 = 20;
+	
+	function func1 () {
+		let c1 = 30; // 지역변수
+		const d1 = 40;
+		document.write('<br> a1 : ', a1,"b1 :",b1);
+		document.write('<br> c1 : ', c1,"d1 :",d1);
+		function func2() {
+			let e1 = 50;
+			document.write('<br>e1 :',e1); // e1은 func2의 멤버
+			document.write('<br> a1 : ', a1,"b1 :",b1); // a1, b1은 전역변수
+			document.write('<br> c1 : ', c1,"d1 :",d1); // c1, d1은 func1의 멤버
+		}
+		func2();
+		// document.write('<br>e1 :',e1); - err 
+	}
+	func1();
+	
+	document.write('<br> func1 밖에서 호출 a1 : ', a1,"b1 :",b1);
+	// document.write('<br> c1 : ',' ', c1,"d1 :",d1); - err : 함수 안에서만 선언된 변수
+	// 함수 내에서는 함수 밖의 멤버 참조 가능
+	// 함수 밖에서는 함수 안의 멤버 참조 불가능
+</script>
+
+</body>
+</html>
