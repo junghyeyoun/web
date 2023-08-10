@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+클라이언트가 서버로 값 전달
+<br>
+get 방식 : 소량의 자료를 요청파일명 뒤에 parameter로 전송 - 대량은 안됨, 보안에 문제
+<br>
+<a href="d_receive.jsp?irum=tom&nai=22">server로 값 전달</a>
+<br>
+<form action="d_receive.jsp" method="post"> <!-- method : url 뒤 뭐 붙음 / post : 안붙음-->
+	<table border="1">
+		<tr>
+			<td>이름 :</td>
+			<td><input type ="text" name="irum" value="홍길동"></td> <!-- 초기값 설정-->
+		</tr>
+		<tr>
+			<td>나이 :</td>
+			<td><input type ="number" name="nai" placeholder="숫자만"></td> <!-- 문자는 들어갈 수 없음 숫자만 가능 / placeholder는 메세지-->
+		</tr>
+		<tr>
+			<td>비번 :</td>
+			<td><input type ="password" name="password"></td> <!-- 문자는 들어갈 수 없음 숫자만 가능-->
+		</tr>
+		<tr>
+			<td colspan="2"><input type = "submit" value="전송">
+			<input type="reset" value="초기화"></td>
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>
