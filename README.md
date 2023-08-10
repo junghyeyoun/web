@@ -1,6 +1,7 @@
 # web
 ## 📌 HTML
 HTML이란? Hyper Text Markup Language의 약자로 우리가 보는 웹페이지가 어떻게 구조화되어 있는지 브라우저로 하여금 알 수 있도록 하는 마크업 언어이다. HTML은 elements로 구성되어 있으며, 이들은 적절한 방법으로 나타내고 실행하기 위해 각 컨텐츠의 여러 부분들을 감싸고 마크업 한다. tags 는 웹 상의 다른 페이지로 이동하게 하는 하이퍼링크 내용들을 생성하거나, 단어를 강조하는 등의 역할을 한다.
+
 참고 : https://velog.io/@tnsida315/HTML
 
 ## 📌 Javasript
