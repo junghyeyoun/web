@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+	function tdfunc(para) {
+		alert(para);
+	}
+	
+	$(document).ready(function() {
+		$("td").click(function() {
+		// $("td").dblclick(function() { // 더블클릭
+			alert($(this).text());
+	});
+	
+		// 키보드 이벤트
+		$("#txtA").keydown(function(event) {
+		$("#txtB").val(event.keyCode + 32); // ascii코드에서 32더한 값 나옴
+	});
+});
+	
+	
+	
+</script>
+</head>
+<body>
+** 이벤트 연습 **<br>
+<table>
+	<tr>
+		<td onclick="tdfunc('서호 오늘 메뉴는')">짜장면</td>
+		<td>mbc</td>
+		<td>sbs</td>
+	</tr>
+</table>
+<br>
+키보드 이벤트 : <br>
+<input type="text" id="txtA"/>
+<input type="text" id="txtB"/>
+</body>
+</html>

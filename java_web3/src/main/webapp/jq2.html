@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- css을 먼저 적어주고 javascript 라이브러리 적고 javascript 작성 -->
+<style>
+	.hello{
+		background-color: #bbb;
+	}
+</style>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+	$(document).ready(function() {
+		$("lable").css("color", "#abc");
+		$("h2").css({"color":"red","text-decoration":"underline"});
+		$("#msg").wrap("<h1/>");
+		
+		// 이벤트
+		/*
+		$("input").focus(function() {
+			$(this).addClass("hello");
+		}); // 밑에와 같은 의미*/
+		$("input").on("focus",function(){
+			$(this).addClass("hello");
+		})
+		$("input").blur(function() { // focus 잃어버렸을 때
+			$(this).removeClass("hello");
+		});
+		
+		$("#frm").submit(function(event) {
+			event.preventDefault(); // 기본 이벤트 기능 해제
+			// alert('a');
+			if($("#data").val() === "") {
+				alert("자료 입력");
+				return; // method or function에서 빠짐
+			}
+			let new_ele = "<li>" + $("data").val() + "</li>"; // 문서에 리스트 찍힘
+			$("#disp").append(new_ele);
+		});
+		
+		$("a").click(function(e){
+			event.preventDefault();
+			alert("다른 작업 하기");
+		});
+	});
+</script>
+</head>
+<body>
+<h2>jQuery 이벤트 연습</h2>
+<div id="msg">이벤트</div>
+<form action="aa.jsp" id="frm">
+	<lable for="fdata">자료 입력</lable>
+	<input type="text" name="data" id="data"/>
+	<input type="submit" value="확인" /> 
+</form>
+<ul id="disp">
+</ul>
+<br>
+<a href="https://www.naver.com/index.html">네이버로 이동</a>
+</body>
+</html>

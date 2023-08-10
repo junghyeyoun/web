@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.korea{
+		font-size: 40px;
+	}
+</style>
+<!--jQeury  라이브러리 사용 방법1 : 라이브러리를 다운받아 설치 -->
+<!--jQeury  라이브러리 사용 방법2 : cdn 사용 (밑에 방법. 네트워크가 안되면 사용 불가)-->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> (밑에랑 같은 방법임) --> 
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+	/*
+	window.onload = function() {
+		alert('a');
+	}
+	*/ // 위에랑 뜻 똑같음
+	// jQuery 명령이기 때문에 라이브러리를 사용해야 사용 가능
+	// $(document).ready(function() { 밑에와 같은 뜻 // $() factory 함수 - 문서를 객체화, 선택
+	jQuery(document).ready(function(){  //window.~ 보다 속도 빠름
+		// alert('a');
+		$("*").css("color", "#ff0000"); // 문서 전체 선택
+		$("span").css("border", "3px dotted blue"); // 특정 태그(span) 대상
+		$("#content").css("background-color", "cyan"); // id가 대상 // div div : 자손 / div > div :자식
+		$(".my").css("border", "5px solid yellow"); // class가 대상
+		$("i > sapn.my").css("color","blue").css("font-size","28px"); // method chain
+	});
+	
+	$(function() { // $(document).ready(function() {})와 같은 의미
+		$(".kor").css("color", "yellow").addClass("korea");
+	})
+</script>
+</head>
+<body>
+<h2>jQuery 연습</h2>
+<p class="my">태풍이 몰려오는 10시 즈음</p>
+<div>
+	<div id="content">폭염은 지나가고</div>
+</div>
+<b>민규의 겨울 준비(이성 친구를 사귀다)</b>
+<br>
+<span>강남 사거리</span>
+<i><span class="my">오펜하이머 영화를 기다리며</span></i> <br>
+<b class="kor">대한민국</b>
+</body>
+</html>
