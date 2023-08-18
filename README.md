@@ -23,3 +23,7 @@ HTML이란? Hyper Text Markup Language의 약자로 우리가 보는 웹페이�
 - 메소드 체이닝(Method chaining) 등 짧고 유지관리가 용이한 코드 작성을 지원한다.
 - 관련 플러그인들이 웹상에 공개되어 있으며 플러그인을 직접 구현하거나 확장할 수 있다.
 - 공식 웹사이트(www.jquery.com)와 수많은 레퍼런스를 통해 쉽게 접근 가능하다.
+
+## 📌 React
+ 리액트는 UI 자바스크립트 라이브러리로써 싱글 페이지 애플리케이션의 UI(User Interface)를 생성하는데 집중한 라이브러리다. 리액트는 자바스크립트에 HTML을 포함하는 JSX(JavaScript XML)이라는 간단한 문법과 단방향 데이터 바인딩(One-way Data Binding)을 사용하고 있습다. 그리고 가상 돔(Virtual DOM)이라는 개념을 사용하여 웹 애플리케이션의 퍼포먼스를 최적화한 라이브러리이다.
+참고 : https://dev-yakuza.posstree.com/ko/react/create-react-app/react/
