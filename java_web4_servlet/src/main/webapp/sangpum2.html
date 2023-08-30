@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		document.getElementById("btnOk").onclick = function() {
+			frm.submit();
+		}
+	}
+</script>
+</head>
+<body>
+<table>
+	<tr>
+		<td><img src="images/pic2.jpg" width="25%"/></td>
+		<td>
+			<pre>
+	품명 : 감자피 쫀득한 투명만두 왕만두 모음전
+	가격 : 20,000원
+	생산자 및 소재지 : 종가집 김치
+			</pre>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<form action="./Cart" name="frm" method="post">
+				<input type="hidden" name="name" value="감자피 쫀득한 투명만두"/>
+				<input type="hidden" name="price" value="20000"/>
+				<input type="button" id="btnOk" value="장바구니에 담기"/>
+				<input type="button" id="btnCancel" value="홈으로" onclick="history.back()"/> <!-- history.back : 이전화면으로 돌아가기 -->
+		</form>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
