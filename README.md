@@ -39,3 +39,17 @@ JSP란? JavaServer Pages의 약자로 HTML,DHTML,XHTML,XML과 같은 동적 웹 
 
   참고 : https://velog.io/write?id=12c8ced1-00a6-460d-bb28-75c01e95235c
 
+## 📌 EL
+
+ EL은 Expression Language의 약자로 JSP 스크립트의 표현식을 대신하여 속성 값을 쉽게 출력하도록 고안된 언어이다. EL은 출력 및 반복처리를 태그 기반으로 제공한다. JSTL과 함께하면 더욱 효과적이다.  pageScope, requestScope, param, ... 등의 내장객체를 지원한다.
+ 
+ jsp 표현식을 대신해 속성 값을 쉽게 출력하기 위한 언어이다. 
+✏ ${표현식}
+ <%= %>e대신 위와 같이 나타낼 수 있다.
+
+## 📌 JSLT
+
+ JavaServer Pages Standard Tag Library의 약자로 JSP 개발을 단순화하기 위한 표준태그 라이브러리이다. 빠른 개발, 코드 재사용성, JSP의 스크립트릿을 최소화해서 코드의 난독을 해결할 수 있다.
+
+ 참고 : https://velog.io/@tnsida315/EL-JSLT 
+
