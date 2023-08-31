@@ -26,7 +26,8 @@ HTML이란? Hyper Text Markup Language의 약자로 우리가 보는 웹페이�
 
 ## 📌 React
  리액트는 UI 자바스크립트 라이브러리로써 싱글 페이지 애플리케이션의 UI(User Interface)를 생성하는데 집중한 라이브러리다. 리액트는 자바스크립트에 HTML을 포함하는 JSX(JavaScript XML)이라는 간단한 문법과 단방향 데이터 바인딩(One-way Data Binding)을 사용하고 있습다. 그리고 가상 돔(Virtual DOM)이라는 개념을 사용하여 웹 애플리케이션의 퍼포먼스를 최적화한 라이브러리이다.
-참고 : https://dev-yakuza.posstree.com/ko/react/create-react-app/react/
+
+ 참고 : https://dev-yakuza.posstree.com/ko/react/create-react-app/react/
 
 ## 📌 Servlet
 Servlet 이란? 클라이언트의 요청을 처리하고, 그 결과를 반환하는 Servlet 클래스의 구현 규칙을 지킨 자바 웹 프로그래밍 기술이다.
