@@ -54,3 +54,11 @@ JSP란? JavaServer Pages의 약자로 HTML,DHTML,XHTML,XML과 같은 동적 웹 
 
  참고 : https://velog.io/@tnsida315/EL-JSLT 
 
+## 📌 Mybatis
+
+Mybatis는 개발자가 지정한 SQL, 저장프로시저 그리고 몇가지 고급 매핑을 지원하는 퍼시스턴스 프레임워크이다.
+자바는 jdbc api를 제공해주지만, 이런 JDBC를 이용하면 1개 클래스에 반복된 코드가 존재하고, 한 파일에 java와 sql 두가지 언어가 사용되어 재사용성이 떨어지는 단점이 있다.
+Mybatis는 jdbc의 이러한 점을 보안해서 개발자가 작성한 SQL 명령어와 자바 객체를 매핑해 주는 기능을 제공하며, 기존에 사용하던 SQL 명령어를 재사용할 수 있다.
+
+ 참고 : https://velog.io/@tnsida315/Mybatis
+
