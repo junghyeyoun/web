@@ -15,7 +15,7 @@ public class ServiceDao {
 	// DataMapper에 selectDataAll를 읽기 위한 과정 
 	// 복수일 때 list로 반환함
 	public List<SangpumDto> selectAll() throws Exception {
-		// SqlSession을 생성하기 위해 SqlSessionFactory를 사용한다. 세션ㅇ늘 한번 생성하면 매핑구문을 실행하거나 커밋 또는 롤백을 하기 위해 세션을 사용할수 있다.
+		// SqlSession을 생성하기 위해 SqlSessionFactory를 사용한다. 세션을 한번 생성하면 매핑구문을 실행하거나 커밋 또는 롤백을 하기 위해 세션을 사용할수 있다.
 		// 더 이상 필요하지 않은 상태가 되면 세션을 닫는다.
 		SqlSession sqlSession = factory.openSession(); // 세션(SQL 매핑 처리단위) 열기
 		List<SangpumDto> list = sqlSession.selectList("selectDataAll"); // DataMapper.xml의 id를 호출
