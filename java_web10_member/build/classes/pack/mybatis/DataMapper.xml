@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dev">
+
+ <select id="selectDataAll" resultType="dto"> <!-- 반환값은 list임 --> <!-- sql문에 ; 쓰면 안됨 -->
+  select * from membertab
+ </select>
+ 
+</mapper>
+
+ 
+
