@@ -1,6 +1,5 @@
-<%@page import="org.apache.ibatis.session.SqlSession"%>
+
 <%@page import="pack.business.SqlMapConfig"%>
-<%@page import="org.apache.ibatis.session.SqlSessionFactory"%>
 <%@page import="pack.business.DataDto"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
