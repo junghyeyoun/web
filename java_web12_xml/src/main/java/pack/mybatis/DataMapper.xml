@@ -5,19 +5,35 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="dev">
 
- <select id="selectDataAll" resultType="dto"> <!-- 반환값은 list임 --> <!-- sql문에 ; 쓰면 안됨 -->
-  select jikwon_no, jikwon_name, jikwon_jik, jikwon_gen, jikwon_pay from jikwon
+ <sql id="jikwon">jikwon_no, jikwon_name, jikwon_jik, jikwon_gen, jikwon_pay</sql>
+ <sql id="gogek">gogek_no, gogek_name, gogek_tel</sql>
+ <sql id="seng">, CASE WHEN SUBSTR(gogek_jumin, 8, 1) IN ( '1', '3') THEN '남자'
+       	 WHEN SUBSTR(gogek_jumin, 8, 1) IN ( '2', '4') THEN '여자'
+        end seng</sql>
+ 
+ 
+ <select id="jikwonData" resultType="dto">
+  select <include refid="jikwon"/> from jikwon
  </select>
  
-<select id="selectDataPart" resultType="dto" parameterType="string">
- select gogek_no, gogek_name, gogek_tel, gogek_jumin 
- from gogek inner join jikwon on jikwon_no = gogek_damsano where jikwon_no =#{jikwon_no}; 
-</select>
- 
- 
+ <!-- 
+ <select id="gogekData" resultType="dto" parameterType="string">
+ select <include refid="gogek"/><include refid="seng"/> from gogek 
+ inner join jikwon on gogek_damsano = jikwon_no 
+ where gogek_damsano = 
+ (SELECT jikwon_no from jikwon where jikwon_name = #{jikwon_name})
+ </select>
+ -->
 
+ <select id="gogekData" resultType="dto" parameterType="string">
+ select <include refid="gogek"/><include refid="seng"/> from gogek 
+ inner join jikwon on gogek_damsano = jikwon_no 
+ where gogek_damsano = #{jikwon_no}
+ </select>
+
+
+ 
  
 </mapper>
 
  
-

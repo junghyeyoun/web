@@ -8,13 +8,13 @@ import org.apache.ibatis.session.SqlSessionFactory;
 public class ProcessImpl implements ProcessInterface{
 	private SqlSessionFactory factory = SqlMapConfig.getSqlSession();
 	@Override
-	public List<DataDto> selectDataAll() {
+	public List<DataDto> jikwonData() {
 		SqlSession sqlSession = factory.openSession();
 		List<DataDto> list = null;
 		try {
-			list = sqlSession.selectList("selectDataAll");
+			list = sqlSession.selectList("jikwonData");
 		} catch (Exception e) {
-			System.out.println("selectDataAll err : "+e);
+			System.out.println("jikwonData err : "+e);
 		} finally {
 			if(sqlSession != null) sqlSession.close();
 		}
@@ -22,13 +22,13 @@ public class ProcessImpl implements ProcessInterface{
 	}
 	
 	@Override
-	public List<DataDto> selectDataPart(String jikwon_no) {
+	public List<DataDto> gogekData(String jikwon_no) {
 		SqlSession sqlSession = factory.openSession();
 		List<DataDto> list = null;
 		try {
-			list = sqlSession.selectList("selectDataPart",jikwon_no);
+			list = sqlSession.selectList("gogekData",jikwon_no);
 		} catch (Exception e) {
-			System.out.println("selectDataPart err : "+e);
+			System.out.println("gogekData err : "+e);
 		} finally {
 			if(sqlSession != null) sqlSession.close();
 		}

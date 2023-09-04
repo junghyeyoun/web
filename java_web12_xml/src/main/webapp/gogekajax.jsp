@@ -9,7 +9,6 @@
 <%
 request.setCharacterEncoding("utf-8");
 String jikwon_no = request.getParameter("jikwon_no");
-jikwon_no ="2";
 ArrayList<DataDto> list = (ArrayList<DataDto>)process.selectDataPart(jikwon_no);
 %>
 

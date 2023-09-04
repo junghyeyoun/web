@@ -14,6 +14,7 @@ String jikwon_no = request.getParameter("jikwon_no");
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
    <h3>고객 정보 </h3>
@@ -47,5 +48,4 @@ String jikwon_no = request.getParameter("jikwon_no");
       </c:forEach>
    </table>
 </body>
-</html>
 </html>
